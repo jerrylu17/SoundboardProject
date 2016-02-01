@@ -1,0 +1,99 @@
+body{
+    background-image: url("ibpbg.png");
+    background-size: 100%;
+
+}
+#box {
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 600px);
+    height: 1000px;
+    width: 1200px;
+    background-color: rgba(200, 200, 200, 0.8);
+    opacity: 0.9;
+    border: 10px solid;
+    border-radius: 1%;
+    text-align: center;
+}
+#pleb{
+	padding-top: 20px;
+}
+
+.animate
+{
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+    position: relative;
+    padding: 6px 20px;
+    margin: 0px 10px 10px 0px; 
+    border-radius: 5px;
+    font-size: 15px;
+    color: #FFF;
+    text-decoration: none;  
+}
+
+.blue
+{
+    background-color: white;
+    border-bottom: 2px solid #2980B9;
+    
+    color: #2980B9;
+}
+
+.red
+{
+    background-color: white;
+    border-bottom: 2px solid #BD3E31;
+    color: #BD3E31;
+}
+
+.green
+{
+    background-color: white;
+    border-bottom: 2px solid #669644;
+    color: #669644;
+}
+
+.yellow
+{
+    background-color: white;
+    border-bottom: 2px solid #D1B358;
+    color: #D1B358;
+}
+.purple
+{
+    background-color: white;
+    border-bottom: 2px solid purple;
+    
+    color: purple;
+}
+.grey
+{
+    background-color: white;
+    border-bottom: 2px solid grey;
+    
+    color: grey;
+}
+.action-button:active
+{
+    transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
+#link{
+    padding-left:70px;
+    padding-top:30px;
+}
+#link1{
+    padding-left:70px;
+    padding-top:160px;
+}
+#grave{
+    float:right;
+    padding-right:80px;
+    padding-top:-10px;
+}
