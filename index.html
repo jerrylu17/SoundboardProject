@@ -22,6 +22,15 @@
 				audio.play();
 			}
 		}
+		window.onkeypress = function(e){
+			if (e.keyCode === 0 || e.keyCode === 32) {
+    			e.preventDefault();
+    			if (prevAudio != null){
+    				prevAudio.pause();
+    				prevAudio.currentTime = 0;
+    			}
+    		}
+		}
 		// HELLO
 		// JERRY
 		// LU
@@ -80,41 +89,41 @@
 
 
  <h1>DJ Khaled</h1>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound1')">Anotha one</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound2')">Anotha one 2</button>
- 	<button class="action-button shadow animate blue" onclick="playSB('sound3')">You loyal</button>
- 	<button class="action-button shadow animate blue" onclick="playSB('sound4')">You a genius</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound5')">I appreciate you</button> <br><br>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound6')">Win</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound7')">We da best</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound8')">Don't ever play yourself</button>
-   	<button class="action-button shadow animate blue" onclick="playSB('sound9')">Congratulations, you played yourself</button>
+  	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound1')">Anotha one</button>
+  	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound2')">Anotha one 2</button>
+ 	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound3')">You loyal</button>
+ 	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound4')">You a genius</button>
+  	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound5')">I appreciate you</button> <br><br>
+  	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound6')">Win</button>
+  	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound7')">We da best</button>
+  	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound8')">Don't ever play yourself</button>
+   	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound9')">Congratulations, you played yourself</button>
 
 
  <h1>Shia LaBeouf</h1>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound10')">DO IT</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound11')">DO IT 2</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound12')">Dreams 1</button>
-   	<button class="action-button shadow animate blue" onclick="playSB('sound13')">Dreams 2</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound14')">glocks 5</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound15')">glocks 6</button><br><br>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound16')">glocks 7</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound17')">glocks 8</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound18')">glocks 9</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound19')">glocks 10</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound20')">glocks 11</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound21')">glocks 12</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound22')">glocks 13</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound10')">DO IT</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound11')">DO IT 2</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound12')">Dreams 1</button>
+   	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound13')">Dreams 2</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound14')">glocks 5</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound15')">glocks 6</button><br><br>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound16')">glocks 7</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound17')">glocks 8</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound18')">glocks 9</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound19')">glocks 10</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound20')">glocks 11</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound21')">glocks 12</button>
+  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound22')">glocks 13</button>
 
  <h1>Vine</h1>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound23')">What's 9 + 10</button>
-   	<button class="action-button shadow animate blue" onclick="playSB('sound24')">Deez Nuts</button>
-   	<button class="action-button shadow animate blue" onclick="playSB('sound25')">that's insane</button>
-   	<button class="action-button shadow animate blue" onclick="playSB('sound26')">That's insane</button>
-  	<button class="action-button shadow animate blue" onclick="playSB('sound27')">it's so insane</button>
+  	<button class="action-button shadow animate green" onclick="this.blur();playSB('sound23')">What's 9 + 10</button>
+   	<button class="action-button shadow animate green" onclick="this.blur();playSB('sound24')">Deez Nuts</button>
+   	<button class="action-button shadow animate green" onclick="this.blur();playSB('sound25')">that's insane</button>
+   	<button class="action-button shadow animate green" onclick="this.blur();playSB('sound26')">That's insane</button>
+  	<button class="action-button shadow animate green" onclick="this.blur();playSB('sound27')">it's so insane</button>
 
  <h1>Miscellaneous</h1>
-	<button class="action-button shadow animate blue" onclick="playSB('sound28')">JOHN CENA</button>
+	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound28')">JOHN CENA</button>
 
   	
   	<br><br><br>
