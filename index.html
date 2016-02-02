@@ -8,7 +8,19 @@
 	<!-- JavaScript -->
 	<script type="text/javascript">
 		// Put code here or set the src attribute
-		
+		var prevAudio = null;
+		function playSB(soundfile){
+			var audio = document.getElementById(soundfile);
+			if (prevAudio != null){
+				prevAudio.pause();
+				prevAudio.currentTime = 0;
+				audio.play();
+			}
+			else{
+				prevAudio = audio;
+				audio.play();
+			}
+		}
 		// HELLO
 		// JERRY
 		// LU
@@ -34,13 +46,13 @@
 </a>
 <p><h3></h3></p>
 
-	<audio id="sound1" src="mp3s/sound1.mp3"></audio>
-	<audio id="sound2" src="mp3s/sound2.mp3"></audio>
-	<audio id="sound3" src="mp3s/sound3.mp3"></audio>
-	<audio id="sound4" src="mp3s/sound4.mp3"></audio>
-	<audio id="sound5" src="mp3s/sound5.mp3"></audio>
-	<audio id="sound6" src="mp3s/sound6.mp3"></audio>
-	<audio id="sound7" src="mp3s/sound7.mp3"></audio>
+	<audio id="sound1" src="mp3s/SB_AnothaOne.mp3"></audio>
+	<audio id="sound2" src="mp3s/SB_AnotherOne2.mp3"></audio>
+	<audio id="sound3" src="mp3s/SB_Loyal.mp3"></audio>
+	<audio id="sound4" src="mp3s/SB_Genius.mp3"></audio>
+	<audio id="sound5" src="mp3s/SB_Appreciate.mp3"></audio>
+	<audio id="sound6" src="mp3s/SB_Win.mp3"></audio>
+	<audio id="sound7" src="mp3s/SB_Best.mp3"></audio>
 	<audio id="sound8" src="mp3s/sound8.mp3"></audio>
 	<audio id="sound9" src="mp3s/sound9.mp3"></audio>
 	<audio id="sound10" src="mp3s/sound.mp3"></audio>
@@ -66,38 +78,38 @@
 
 
  <h1>DJ Khaled</h1>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound1').play()">Anotha one</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound2').play()">Don't ever play yourself</button>
-   	<button class="action-button shadow animate blue" onclick="document.getElementById('sound3').play()">Congratulations, you played yourself</button>
- 	<button class="action-button shadow animate blue" onclick="document.getElementById('sound4').play()">The key to success 1</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound5').play()">The key to success 2</button> <br><br>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound6').play()">just don't understand</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound7').play()">SO MANY TIMES</button>
-   	<button class="action-button shadow animate blue" onclick="document.getElementById('sound8').play()">it's happening again dude</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound9').play()">i dont understand</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound1')">Anotha one</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound2')">Anotha one 2</button>
+ 	<button class="action-button shadow animate blue" onclick="playSB('sound3')">You loyal</button>
+ 	<button class="action-button shadow animate blue" onclick="playSB('sound4')">You a genius</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound5')">I appreciate you</button> <br><br>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound6')">Win</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound7')">We da best</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound8')">Don't ever play yourself</button>
+   	<button class="action-button shadow animate blue" onclick="playSB('sound9')">Congratulations, you played yourself</button>
 
 
  <h1>Fun stuff</h1>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound10').play()">JOHN CENA</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound11').play()">glocks 2</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound12').play()">glocks 3</button>
-   	<button class="action-button shadow animate blue" onclick="document.getElementById('sound13').play()">glocks 4</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound14').play()">glocks 5</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound15').play()">glocks 6</button><br><br>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound16').play()">glocks 7</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound17').play()">glocks 8</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound18').play()">glocks 9</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound19').play()">glocks 10</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound20').play()">glocks 11</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound21').play()">glocks 12</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound22').play()">glocks 13</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound10')">JOHN CENA</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound11')">glocks 2</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound12')">glocks 3</button>
+   	<button class="action-button shadow animate blue" onclick="playSB('sound13')">glocks 4</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound14')">glocks 5</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound15')">glocks 6</button><br><br>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound16')">glocks 7</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound17')">glocks 8</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound18')">glocks 9</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound19')">glocks 10</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound20')">glocks 11</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound21')">glocks 12</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound22')">glocks 13</button>
 
  <h1>Insane</h1>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound23').play()">That's insane</button>
-   	<button class="action-button shadow animate blue" onclick="document.getElementById('sound24').play()">It's insaaane</button>
-   	<button class="action-button shadow animate blue" onclick="document.getElementById('sound25').play()">that's insane</button>
-   	<button class="action-button shadow animate blue" onclick="document.getElementById('sound26').play()">That's insane</button>
-  	<button class="action-button shadow animate blue" onclick="document.getElementById('sound27').play()">it's so insane</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound23')">That's insane</button>
+   	<button class="action-button shadow animate blue" onclick="playSB('sound24')">It's insaaane</button>
+   	<button class="action-button shadow animate blue" onclick="playSB('sound25')">that's insane</button>
+   	<button class="action-button shadow animate blue" onclick="playSB('sound26')">That's insane</button>
+  	<button class="action-button shadow animate blue" onclick="playSB('sound27')">it's so insane</button>
 
   	
   	<br><br><br>
