@@ -8,9 +8,32 @@
 	<!-- JavaScript -->
 	<script type="text/javascript">
 		// Put code here or set the src attribute
-		console.log();
+		//console.log();
 		var buttonfreq = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 		var prevAudio = null;
+		function loadFreq(){
+			var xmlhttp = new XMLHttpRequest();
+    		xmlhttp.onreadystatechange = function() {
+    		  if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    		    buttonfreq = JSON.parse(xmlhttp.responseText);
+    		    console.log("received load");
+    		    console.log(buttonfreq);
+    		  }
+    		};
+    		var args = {
+  			  rqst: 'load',
+  			  memes: JSON.stringify(buttonfreq),
+  			};
+    		xmlhttp.open("GET", "meme.php?"+dw_encodeVars(args), true);
+    		xmlhttp.send();
+		}
+		function dw_encodeVars(params) {
+		  var str = '';
+		  for (var i in params ) {
+		    str += encodeURIComponent(i) + '=' + encodeURIComponent( params[i] ) + '&';
+		  }
+		  return str.slice(0, -1);
+		}
 		function playSB(soundfile){
 			var audio = document.getElementById(soundfile);
 			if (prevAudio != null){
@@ -36,8 +59,23 @@
 		function addFreq(soundfile){
 			var index = parseInt(soundfile.substring(5)) - 1;
 			buttonfreq[index] += 1;
-			console.log(document.getElementById(String(index+1)).innerHTML);
-			console.log(buttonfreq[index]);
+			unloadFreq();
+		}
+		function unloadFreq(){
+			var xmlhttp = new XMLHttpRequest();
+    		xmlhttp.onreadystatechange = function() {
+    		  if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    		    buttonfreq = JSON.parse(xmlhttp.responseText);
+    		    console.log("passed load");
+    		    console.log(buttonfreq);
+    		  }
+    		};
+    		var args = {
+  			  rqst: 'save',
+  			  memes: JSON.stringify(buttonfreq),
+  			};
+    		xmlhttp.open("GET", "meme.php?"+dw_encodeVars(args), true);
+    		xmlhttp.send();
 		}
 		function viewTop(){
 			var tempArr = buttonfreq.slice();
@@ -73,8 +111,8 @@
 					mIndex = i;
 				}
 			}
-			console.log(cMax);
-			console.log(mIndex);
+			//console.log(cMax);
+			//console.log(mIndex);
 			return mIndex;
 		}
 		// HELLO
@@ -93,7 +131,7 @@
 
 
  
-<body id="page-wrap">
+<body id="page-wrap" onload="loadFreq()">
  	
 <div id="box">
 <a href="http://tjhsst.edu/" target="_blank">
