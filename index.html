@@ -8,6 +8,8 @@
 	<!-- JavaScript -->
 	<script type="text/javascript">
 		// Put code here or set the src attribute
+		console.log();
+		var buttonfreq = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 		var prevAudio = null;
 		function playSB(soundfile){
 			var audio = document.getElementById(soundfile);
@@ -30,6 +32,50 @@
     				prevAudio.currentTime = 0;
     			}
     		}
+		}
+		function addFreq(soundfile){
+			var index = parseInt(soundfile.substring(5)) - 1;
+			buttonfreq[index] += 1;
+			console.log(document.getElementById(String(index+1)).innerHTML);
+			console.log(buttonfreq[index]);
+		}
+		function viewTop(){
+			var tempArr = buttonfreq.slice();
+			//console.log(tempArr);
+			var tempvar = findMax(tempArr);
+			tempArr[tempvar] = -1;
+			//console.log(tempArr);
+			var numa1 = "1. "+document.getElementById(String(tempvar+1)).innerHTML+": "+buttonfreq[tempvar]+"\n";
+			tempvar = findMax(tempArr);
+			tempArr[tempvar] = -1;
+			//console.log(tempArr);
+			var numa2 = "2. "+document.getElementById(String(tempvar+1)).innerHTML+": "+buttonfreq[tempvar]+"\n";
+			tempvar = findMax(tempArr);
+			tempArr[tempvar] = -1;
+			//console.log(tempArr);
+			var numa3 = "3. "+document.getElementById(String(tempvar+1)).innerHTML+": "+buttonfreq[tempvar]+"\n";
+			tempvar = findMax(tempArr);
+			tempArr[tempvar] = -1;
+			//console.log(tempArr);
+			var numa4 = "4. "+document.getElementById(String(tempvar+1)).innerHTML+": "+buttonfreq[tempvar]+"\n";
+			tempvar = findMax(tempArr);
+			tempArr[tempvar] = -1;
+			//console.log(tempArr);
+			var numa5 = "5. "+document.getElementById(String(tempvar+1)).innerHTML+": "+buttonfreq[tempvar];
+			alert("Top Buttons:\n"+numa1+numa2+numa3+numa4+numa5);
+		}
+		function findMax(arr){
+			var cMax = -10;
+			var mIndex = 0;
+			for (var i = 0; i < arr.length; i++) {
+				if (cMax < arr[i]){
+					cMax = arr[i];
+					mIndex = i;
+				}
+			}
+			console.log(cMax);
+			console.log(mIndex);
+			return mIndex;
 		}
 		// HELLO
 		// JERRY
@@ -80,62 +126,62 @@
 	<audio id="sound22" src="mp3s/SB_Rekt4.mp3"></audio>
 	<audio id="sound23" src="mp3s/SB_21.mp3"></audio>
 	<audio id="sound24" src="mp3s/SB_DeezNuts.mp3"></audio>
-	<audio id="sound28" src="mp3s/SB_JohnCena.mp3"></audio>
-	<audio id="sound29" src="mp3s/SB_Rekt5.mp3"></audio>
-	<audio id="sound30" src="mp3s/SB_Jeff.mp3"></audio>
-	<audio id="sound31" src="mp3s/SB_Frozen.mp3"></audio>
-	<audio id="sound32" src="mp3s/SB_Supersuit.mp3"></audio>
-	<audio id="sound33" src="mp3s/SB_Patrick.mp3"></audio>
-	<audio id="sound34" src="mp3s/SB_Trump.mp3"></audio>
-	<audio id="sound35" src="mp3s/SB_FUSRODAH.mp3"></audio>
+	<audio id="sound25" src="mp3s/SB_JohnCena.mp3"></audio>
+	<audio id="sound26" src="mp3s/SB_Rekt5.mp3"></audio>
+	<audio id="sound27" src="mp3s/SB_Jeff.mp3"></audio>
+	<audio id="sound28" src="mp3s/SB_Frozen.mp3"></audio>
+	<audio id="sound29" src="mp3s/SB_Supersuit.mp3"></audio>
+	<audio id="sound30" src="mp3s/SB_Patrick.mp3"></audio>
+	<audio id="sound31" src="mp3s/SB_Trump.mp3"></audio>
+	<audio id="sound32" src="mp3s/SB_FUSRODAH.mp3"></audio>
 
 
 
 
  <h1>DJ Khaled</h1>
-  	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound1')">Anotha one</button>
-  	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound2')">Anotha one 2</button>
- 	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound3')">You loyal</button>
- 	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound4')">You a genius</button>
-  	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound5')">I appreciate you</button> <br><br>
-  	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound6')">Win</button>
-  	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound7')">We da best</button>
-  	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound8')">Don't ever play yourself</button>
-   	<button class="action-button shadow animate purple" onclick="this.blur();playSB('sound9')">Congratulations, you played yourself</button>
+  	<button id="1" class="action-button shadow animate purple" onclick="this.blur();playSB('sound1');addFreq('sound1')">Anotha one</button>
+  	<button id="2" class="action-button shadow animate purple" onclick="this.blur();playSB('sound2');addFreq('sound2')">Anotha one 2</button>
+ 	<button id="3" class="action-button shadow animate purple" onclick="this.blur();playSB('sound3');addFreq('sound3')">You loyal</button>
+ 	<button id="4" class="action-button shadow animate purple" onclick="this.blur();playSB('sound4');addFreq('sound4')">You a genius</button>
+  	<button id="5" class="action-button shadow animate purple" onclick="this.blur();playSB('sound5');addFreq('sound5')">I appreciate you</button> <br><br>
+  	<button id="6" class="action-button shadow animate purple" onclick="this.blur();playSB('sound6');addFreq('sound6')">Win</button>
+  	<button id="7" class="action-button shadow animate purple" onclick="this.blur();playSB('sound7');addFreq('sound7')">We da best</button>
+  	<button id="8" class="action-button shadow animate purple" onclick="this.blur();playSB('sound8');addFreq('sound8')">Don't ever play yourself</button>
+   	<button id="9" class="action-button shadow animate purple" onclick="this.blur();playSB('sound9');addFreq('sound9')">You played yourself</button>
 
 
  <h1>Shia LaBeouf</h1>
-  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound10')">DO IT</button>
-  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound11')">DO IT 2</button>
-  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound12')">Dreams 1</button>
-   	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound13')">Dreams 2</button>
-  	<button class="action-button shadow animate red" onclick="this.blur();playSB('sound14')">Nothing is impossible</button>
+  	<button id="10" class="action-button shadow animate red" onclick="this.blur();playSB('sound10');addFreq('sound10')">DO IT</button>
+  	<button id="11" class="action-button shadow animate red" onclick="this.blur();playSB('sound11');addFreq('sound11')">DO IT 2</button>
+  	<button id="12" class="action-button shadow animate red" onclick="this.blur();playSB('sound12');addFreq('sound12')">Dreams 1</button>
+   	<button id="13" class="action-button shadow animate red" onclick="this.blur();playSB('sound13');addFreq('sound13')">Dreams 2</button>
+  	<button id="14" class="action-button shadow animate red" onclick="this.blur();playSB('sound14');addFreq('sound14')">Nothing is impossible</button>
  
  <h1>Movies/TV</h1>
- 	<button class="action-button shadow animate orange" onclick="this.blur();playSB('sound30')">My name is jeff</button>
- 	<button class="action-button shadow animate orange" onclick="this.blur();playSB('sound31')">Frozen</button>
- 	<button class="action-button shadow animate orange" onclick="this.blur();playSB('sound32')">Supersuit</button>
- 	<button class="action-button shadow animate orange" onclick="this.blur();playSB('sound33')">This is patrick</button>
+ 	<button id="27" class="action-button shadow animate orange" onclick="this.blur();playSB('sound27');addFreq('sound27')">My name is jeff</button>
+ 	<button id="28" class="action-button shadow animate orange" onclick="this.blur();playSB('sound28');addFreq('sound28')">Frozen</button>
+ 	<button id="29" class="action-button shadow animate orange" onclick="this.blur();playSB('sound29');addFreq('sound29')">Supersuit</button>
+ 	<button id="30" class="action-button shadow animate orange" onclick="this.blur();playSB('sound30');addFreq('sound30')">This is patrick</button>
 
  <h1>Songs</h1>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound15')">Troll</button>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound16')">Troll 2</button>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound17')">Hey</button>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound18')">Hey 2</button><br><br>  	
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound19')">Rekt</button>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound20')">Rekt 2</button>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound21')">Rekt 3</button>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound22')">Rekt 4</button>
-  	<button class="action-button shadow animate yellow" onclick="this.blur();playSB('sound29')">Rekt 5</button>
+  	<button id="15" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound15');addFreq('sound15')">Troll</button>
+  	<button id="16" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound16');addFreq('sound16')">Troll 2</button>
+  	<button id="17" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound17');addFreq('sound17')">Hey</button>
+  	<button id="18" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound18');addFreq('sound18')">Hey 2</button><br><br>  	
+  	<button id="19" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound19');addFreq('sound19')">Rekt</button>
+  	<button id="20" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound20');addFreq('sound20')">Rekt 2</button>
+  	<button id="21" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound21');addFreq('sound21')">Rekt 3</button>
+  	<button id="22" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound22');addFreq('sound22')">Rekt 4</button>
+  	<button id="26" class="action-button shadow animate yellow" onclick="this.blur();playSB('sound26');addFreq('sound26')">Rekt 5</button>
 
  <h1>Vine</h1>
-  	<button class="action-button shadow animate green" onclick="this.blur();playSB('sound23')">What's 9 + 10</button>
-   	<button class="action-button shadow animate green" onclick="this.blur();playSB('sound24')">Deez Nuts</button>
+  	<button id="23" class="action-button shadow animate green" onclick="this.blur();playSB('sound23');addFreq('sound23')">What's 9 + 10</button>
+   	<button id="24" class="action-button shadow animate green" onclick="this.blur();playSB('sound24');addFreq('sound24')">Deez Nuts</button>
 
  <h1>Miscellaneous</h1>
-	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound28')">JOHN CENA</button>
-	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound34')">Small loan</button>
-	<button class="action-button shadow animate blue" onclick="this.blur();playSB('sound35')">FUSRODAH</button>
+	<button id="25" class="action-button shadow animate blue" onclick="this.blur();playSB('sound25');addFreq('sound25')">JOHN CENA</button>
+	<button id="31" class="action-button shadow animate blue" onclick="this.blur();playSB('sound31');addFreq('sound31')">Small loan</button>
+	<button id="32" class="action-button shadow animate blue" onclick="this.blur();playSB('sound32');addFreq('sound32')">FUSRODAH</button>
 
   	
   	<br><br><br>
@@ -151,6 +197,8 @@
 <a href="http://www.tjhsst.edu/~2016jlu/" target="_blank">
 <img border="1" src="img/jlu.png" width="267" height="251">
 </a>
+<br><br>
+<button id="top" class="action-button shadow animate grey" onclick="viewTop()">View Most Popular Sounds</button>
        
  </div>
 </body>
